@@ -1,0 +1,51 @@
+{
+	"yahoo": 
+	{
+		"url_current": "http://download.finance.yahoo.com/d/quotes.csv?",
+		"url_history": "http://ichart.finance.yahoo.com/table.csv?s=",
+		"batches":
+		{
+			"dow": {"status": "", "s": "@^DJI", "e": ".csv", "f": "snd1t1ohgl1vb4q"}, 
+			"largecap": {"status": "", "s": "AXP+BA+CAT+CSCO+CVX+DD+DIS+GE+GS+HD+IBM+INTC+JNJ+JPM+KO+MCD+MMM+MRK+MSFT+NKE+PFE+PG+T+TRV+UNH+UTX+V+VZ+WMT+XOM", "e": ".csv", "f": "snd1t1ohgl1vb4q"}, 		"midcap": {"status": "", "s": "DAL+ICE+MU+NFLX+M+DLPH.L+CERN+MYL+WDC+MCO", "e": ".csv", "f": "snd1t1ohgl1vb4q"}, 
+			"smallcap": {"status": "", "s": "CSGP+ATHN+LCC+ISIS+AYI+RAD+ULTI+BC+MIDD+ALGN", "e": ".csv", "f": "snd1t1ohgl1vb4q"}, 
+			"commodities": {"status": "", "s": "GLD+SLV+PALL+PPLT+JJC+USO+UNG+UGA+BNO+UHN+DBC+DBA+DBB+DBE+DBP+GRN+CAFE+JO+BAL+CHOC+NIB+DIRT+WOOD+COW+LSTK+MOO+CTNN+WEET+CANE+SGAR+SOYB+CORN+RGRA", "e": ".csv", "f": "snd1t1ohgl1vb4q"}, 
+			"rates": {"status": "", "s": "SHY+TLT+IEI+IEF+AGG+MBB+TIP+HYG+LQD+EMB+MINT+JNK+BND+ILTB+BUND", "e": ".csv", "f": "snd1t1ohgl1vb4q"}, 
+			"currencies": {"status": "", "s": "FXA+FXB+FXC+FXE+FXF+FXM+FXY+UUP", "e": ".csv", "f": "snd1t1ohgl1vb4q"}, 
+			"sector": {"status": "", "s": "SPY+DIA+QQQ+IWM+ACWI+XLI+IYT+IYR+XLB+XLE+XBI+XLF+XLK+XLV+XLP+XLY+XLU+XHB+XPH+GDX+SLI+IBB", "e": ".csv", "f": "snd1t1ohgl1vb4q"}, 
+			"intl": {"status": "", "s": "EEM+EFA+EWA+EWG+EWH+EWJ+EWM+EWO+EWP+EWS+EWT+EWU+EWQ+EWW+EWY+EWZ+FXI+TAO+FRN+AFK+DVYE+VGK+FM", "e": ".csv", "f": "snd1t1ohgl1vb4q"}, 
+			"sector_XLI": {"status": "", "s": "GE+UTX+BA+UNP+UPS+HON+CAT+EMR+DHR", "e": ".csv", "f": "snd1t1ohgl1vb4q"}, 
+			"sector_XLB": {"status": "", "s": "MON+DD+DOW+PX+FCX+LYB+ECL+PPG+APD+IP", "e": ".csv", "f": "snd1t1ohgl1vb4q"}, 
+			"sector_XLE": {"status": "", "s": "XOM+CVX+SLB+OXY+COP+PXD+EOG+HAL+APC+NOV", "e": ".csv", "f": "snd1t1ohgl1vb4q"}, 
+			"sector_XLF": {"status": "", "s": "AIG+AXP+BAC+BRK-B+C+GS+JPM+MS+WFC+USB+MET+BLK+MA", "e": ".csv", "f": "snd1t1ohgl1vb4q"},
+			"sector_XLK": {"status": "", "s": "AAPL+GOOG+MSFT+T+IBM+VZ+QCOM+ORCL+CSCO+V", "e": ".csv", "f": "snd1t1ohgl1vb4q"}, 
+			"sector_XLP": {"status": "", "s": "PG+KO+PM+WMT+CVS+PEP+MO+CL+COST+MDLZ", "e": ".csv", "f": "snd1t1ohgl1vb4q"}, 
+			"sector_IYT": {"status": "", "s": "UNP+FDX+UPS+ALK+NSC+R+KEX+JBHT+GMT", "e": ".csv", "f": "snd1t1ohgl1vb4q"},
+			"sector_XLU": {"status": "", "s": "DUK+D+NEE+SO+EXC+AEP+SRE+PPL+PCG+PEG", "e": ".csv", "f": "snd1t1ohgl1vb4q"}, 
+			"sector_XLV": {"status": "", "s": "JNJ+PFE+MRK+GILD+AMGN+BMY+ABBV+UNH+BIIB+CELG", "e": ".csv", "f": "snd1t1ohgl1vb4q"}, 
+			"sector_XLY": {"status": "", "s": "CMCSA+DIS+HD+MCD+F+FOXA+PCLN+SBUX+TWX", "e": ".csv", "f": "snd1t1ohgl1vb4q"}, 
+			"sector_BETA": {"status": "", "s": "FB+LNKD+NFLX+TSLA+TWTR+Z+YELP", "e": ".csv", "f": "snd1t1ohgl1vb4q"}
+		}
+	},
+	"finviz": 
+	{
+		"url": "http://finviz.com/export.ashx?v=",
+		"batches":
+		{
+			"overview": 
+				{
+					"id": "112", 
+					"fields": "instrument_desc, sector_desc, industry_desc, country_desc, market_cap, pe_ratio, last_price, last_change, last_volume", 
+					"query": "instrument_desc, sector_desc, industry_desc, country_desc, cast(market_cap as decimal(18,4)), cast(pe_ratio as decimal(18,4)), cast(last_price as decimal(18,4)), cast(replace(last_change, '%','') as decimal(18,4))/100, cast(last_volume as decimal(18,4))",
+					"transform": "max(o.instrument_desc), max(o.sector_desc), max(o.industry_desc), max(o.country_desc), max(o.market_cap), max(o.pe_ratio), max(o.last_price), max(o.last_change), max(o.last_volume)"
+				}, 
+			"financial": 
+				{
+					"id": "162", 
+					"fields": "div_yield, return_on_assets, return_on_equity, return_on_investment, current_ratio, quick_ratio, lt_debt_to_equity, total_debt_to_equity, gross_margin, operating_margin, profit_margin, earnings_date", 
+					"query": "cast(replace(div_yield, '%','') as decimal(18,4))/100, cast(replace(return_on_assets, '%','') as decimal(18,4))/100, cast(replace(return_on_equity, '%','') as decimal(18,4))/100, cast(replace(return_on_investment, '%','') as decimal(18,4))/100, cast(current_ratio as decimal(18,4)), cast(quick_ratio as decimal(18,4)), cast(lt_debt_to_equity as decimal(18,4)), cast(total_debt_to_equity as decimal(18,4)), cast(replace(gross_margin, '%','') as decimal(18,4))/100, cast(replace(operating_margin, '%','') as decimal(18,4))/100, cast(replace(profit_margin, '%','') as decimal(18,4))/100, cast(earnings_date as date)",
+					"transform": "max(f.div_yield), max(f.return_on_assets), max(f.return_on_equity), max(f.return_on_investment), max(f.current_ratio), max(f.quick_ratio), max(f.lt_debt_to_equity), max(f.total_debt_to_equity), max(f.gross_margin), max(f.operating_margin), max(f.profit_margin), max(f.earnings_date)"
+					
+				}
+			}
+	}	
+}
